@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setTimeout Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button onclick="startTimer()">Start Timer</button>
+  <div id="output"></div>
+
+  <script>
+    function startTimer() {
+      var output = document.getElementById('output');
+      
+      // Clear any previous timeouts
+      clearTimeout(output.timeoutId);
+      
+      output.innerHTML = 'Timer will fire in 5 seconds...';
+
+      // Set a timeout to change the message after 5 seconds
+      output.timeoutId = setTimeout(function() {
+        output.innerHTML = 'Timer has fired!';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
